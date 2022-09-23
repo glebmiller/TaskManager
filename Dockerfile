@@ -32,6 +32,8 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 
 ENV PATH $PATH:/root/.poetry/bin
 
+RUN pip install psycopg2-binary
+
 RUN poetry config virtualenvs.create false
 ENV PATH $PATH:/root/.poetry/bin
 
