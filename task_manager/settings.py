@@ -1,5 +1,3 @@
-import os
-
 """
 Django settings for task_manager project.
 
@@ -53,7 +51,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "task_manager.urls"
+ROOT_URLCONF = "main.urls"
 
 TEMPLATES = [
     {
@@ -129,4 +127,4 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = 'main.User'
+AUTH_USER_MODEL = "main.User"
