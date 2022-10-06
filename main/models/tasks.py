@@ -49,9 +49,9 @@ class Task(models.Model):
 
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=30)
-    date_of_creation = models.DateField()
-    date_of_change = models.DateField()
-    date_due = models.DateField()
+    date_of_creation = models.DateField(null=True)
+    date_of_change = models.DateField(null=True)
+    date_due = models.DateField(null=True)
     state = models.CharField(max_length=30, default=STATE_NEW, choices=STATE_CHOICES)
     priority = models.CharField(
         max_length=30, default=Priority.MEDIUM, choices=Priority.choices
