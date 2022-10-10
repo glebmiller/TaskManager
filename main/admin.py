@@ -5,6 +5,7 @@ from .models import Tag
 from .models import Task
 
 
+
 class TaskManagerAdminSite(admin.AdminSite):
     pass
 
@@ -20,12 +21,6 @@ class TagAdmin(admin.ModelAdmin):
 @admin.register(Task, site=task_manager_admin_site)
 class TaskAdmin(admin.ModelAdmin):
     pass
-
-
-class Custom_User_admin(UserAdmin):
-    model = User
-    add_fieldsets = (*UserAdmin.add_fieldsets, ("Custom fields", {"fields": ("role",)}))
-    fieldsets = (*UserAdmin.fieldsets, ("Custom field", {"fields": ("role",)}))
 
 
 task_manager_admin_site.register(User, Custom_User_admin)

@@ -56,9 +56,7 @@ class Task(models.Model):
     priority = models.CharField(
         max_length=30, default=Priority.MEDIUM, choices=Priority.choices
     )
-    # author = models.ForeignKey(User, on_delete=models.CASCADE)
     executor = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-
     tag = models.ManyToManyField(Tag)
 
     def __str__(self):
