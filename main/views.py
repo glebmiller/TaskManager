@@ -10,7 +10,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.order_by("id")
+    queryset = Task.objects.select_related("executor").order_by("id")
     serializer_class = TaskSerializer
 
 
