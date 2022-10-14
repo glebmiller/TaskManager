@@ -47,7 +47,6 @@ ENV DJANGO_SETTINGS_MODULE="task_manager.settings"
 
 EXPOSE 8000
 
-#RUN python manage.py makemigrations
-#RUN python manage.py migrate
+RUN pip install -U drf-yasg
 
 CMD python manage.py runserver 0.0.0.0:8000
