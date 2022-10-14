@@ -19,13 +19,12 @@ from main.admin import task_manager_admin_site
 from main.views import UserViewSet, TaskViewSet, TagViewSet
 from rest_framework import routers
 
-router = routers.DefaultRouter()
-router.register(r"users", UserViewSet)
-router.register(r"tasks", TaskViewSet)
-router.register(r"tags", TagViewSet)
+router = routers.SimpleRouter()
+router.register(r"users", UserViewSet, basename="users")
+router.register(r"tasks", TaskViewSet, basename="tasks")
+router.register(r"tags", TagViewSet, basename="tags")
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
     path("admin/", task_manager_admin_site.urls),
-    path("", include(router.urls)),
+    path("api/", include(router.urls)),
 ]
